@@ -1,0 +1,15 @@
+429f4d481c3e  seed-attacker --> Iface => br-324935eb0310
+75c1a49d8e8d  user-10.9.0.5
+38f92dd74d88  attacker-ns-10.9.0.153
+d17e32179be7  local-dns-server-10.9.0.53
+df3bb47654ee  seed-router
+
+
+To checl DNS cache entries
+rndc dumpdc -cache
+cat /var/cache/bind/dump.db | grep example
+
+is issue with task 1. and your attack fails, then type
+1. tc qdisc add dev eth0 root netem delay 110ms // to add a delay of actual request
+2. tc qdisc show dev eth0 //display
+3. tc qdisc del dev eth0 root netem //delete command
